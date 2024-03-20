@@ -42,7 +42,13 @@ pip install mmpose==0.29.0
 ```
 For more information, see the installation instructions [here](https://mmpose.readthedocs.io/en/0.x/install.html#installation).
 
-### 6. Install remaining build requirements
+### 6. Clone the Lite-HRNet GitHub repository
+
+```
+git clone https://github.com/HRNet/Lite-HRNet.git
+```
+
+### 7. Install remaining build requirements
 
 ```
 pip install -r requirements.txt
@@ -55,7 +61,7 @@ pip install -r requirements.txt
 
 For more information, see the instructions [here](https://mmpose.readthedocs.io/en/0.x/tutorials/2_new_dataset.html).
 
-1. Add the `topdown_speedplus_dataset.py` file from this GitLab project to the `mmpose/datasets/datasets/top_down` folder
+1. Add the `topdown_speedplus_dataset.py` file from this GitHub repository to the `mmpose/datasets/datasets/top_down` folder
 
 2. When running Lite-HRNet for the first time, modify line 15 of the `topdown_speedplus_dataset.py` file in the following way:
 
@@ -69,7 +75,7 @@ For more information, see the instructions [here](https://mmpose.readthedocs.io/
 
 For more information, see the instructions [here](https://mmpose.readthedocs.io/en/0.x/tutorials/3_data_pipeline.html).
 
-1. Add the `my_transforms.py` file from this GitLab project to the `mmpose/datasets/pipelines` folder
+1. Add the `my_transforms.py` file from this GitHub repository to the `mmpose/datasets/pipelines` folder
 
 2. When running Lite-HRNet for the first time, modify line 13 of the `my_transforms.py` file in the following way:
 
@@ -77,3 +83,12 @@ For more information, see the instructions [here](https://mmpose.readthedocs.io/
 @PIPELINES.register_module(name='TopDownBBoxCrop')
 ```
 3. Update the `__init__.py` file in the `mmpose/datasets/pipelines` folder
+
+### 3. Additional modifications
+
+For code modifications required because of MMCV and MMPose upgrades, see the following files in this GitHub repository:
+
+- *configs/_base_/datasets/speedplus.py*
+- *models/backbones/litehrnet.py*
+- *tools/train.py*
+- *tools/test.py*
